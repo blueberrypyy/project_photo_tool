@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset='utf-8' name='viewport' content='width=dive-width, initial-scale=1, shrink-to-fit=no'>
+    <title>{% block title %}Rinsr{% endblock title %}</title>
+
+    <!-- Bootstrap CSS/JS-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <script src='https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css'></script>
+    <script src='https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js'></script>
+
+</head> 
+
+<!--body style='background-image: linear-gradient(to right, #2b2b2b, #1a1a1a);'-->
+<body style='background-image: url(https://images.pexels.com/photos/3586966/pexels-photo-3586966.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2); background-size: cover;'>
+
+<section id='nav-bar'>
+<nav style='background: rgba(0,0,0,0.2)' class="navbar mt-4 mx-5 navbar-dark navbar-expand-lg">
+  <div class="container-fluid">
+      <a class="navbar-brand" href="{% url 'home' %}">Rinsr</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="{% url 'exif' %}">Exiftool</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="{% url 'dotmethod' %}">Dot Method</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Address Gen</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Full Profile Gen</a>
+        </li>
+        <!--li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Dropdown
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">Action</a></li>
+            <li><a class="dropdown-item" href="#">Another action</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="#">Something else here</a></li>
+          </ul>
+        </li>
+      </ul-->
+      <!--form class="d-flex" role="search">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success" type="submit">Search</button>
+      </form-->
+    </div>
+  </div>
+</nav>
+</section>
+<br>
+
+
+{% block content %}
+{% endblock content %}
+</body>
+
