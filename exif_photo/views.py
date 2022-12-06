@@ -1,15 +1,24 @@
 from django.shortcuts import render
 from django.views.generic import TemplateView
+from .models import ExifPhoto
+from django.conf import settings
 
 class HomePageView(TemplateView):
     template_name = 'home.html'
 
+def ExifPageView(request):
+    photo_list = ExifPhoto.objects.all()
+    context = {'photo_list': photo_list, 'media_url': settings.MEDIA_URL}
+    return render(request, 'exif.html', context) 
+
+'''
 class ExifPageView(TemplateView):
     template_name = 'exif.html'
     word = 'If you see this it worked'
     words = {'test': word,
             }
     context = {'words': words}
+'''
 
 #class DotMethodPageView(TemplateView):
 #    template_name = 'dotmethod.html'
