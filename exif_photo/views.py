@@ -2,14 +2,31 @@ from django.shortcuts import render
 from django.views.generic import TemplateView
 from .models import ExifPhoto
 from django.conf import settings
+from django.http import HttpResponseRedirect
+from .forms import ExifPhotoForm
+from PIL import Image
 
 class HomePageView(TemplateView):
     template_name = 'home.html'
 
 def ExifPageView(request):
+    submitted = False
     photo_list = ExifPhoto.objects.all()
-    context = {'photo_list': photo_list, 'media_url': settings.MEDIA_URL}
-    return render(request, 'exif.html', context) 
+    if request.method == 'POST':
+        form = ExifPhotoForm(request.POST, request.FILES)
+        if form.is_valid():
+            form.save()
+            return redirect('success')
+
+    else:
+        form = ExifPhotoForm()
+        if 'submitted' in request.GET:
+            submitted = True
+        
+    return render(request, 'exif.html', {'form': form, 'photo_list': photo_list, 'submitted': submitted, 'media_url': settings.MEDIA_URL}) 
+
+def success(request):
+    return HttpResponse('successfully uploaded')
 
 '''
 class ExifPageView(TemplateView):
