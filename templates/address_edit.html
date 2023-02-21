@@ -1,0 +1,170 @@
+{% extends 'base.html' %}
+{% block title %}Address Jigger{% endblock %}
+
+{% block content %}
+
+<style>
+    .list-group-item {
+        background-color: gray;
+      }
+
+    label {
+        color: white;
+    }
+
+    p {
+        color: white;
+    }
+
+    div {
+        color: white;
+    }
+
+</style>
+
+<div class='container'>
+    <h1 class='text-center' style='color: white;'>Address Jigger</h1>
+    <br>
+</div>
+
+<!-- Card body -->
+    <div class='container'>
+      <div class='card p-4' style='background: linear-gradient(146deg, rgba(0,0,0,1), rgba(0,0,0,0.3))'>
+        <h2>Address Jigger</h2>
+        <p>Just enter your gmail and select how many variations to generate your emails</p>
+      <div class="card-body">
+ 
+      <!-- partial:index.partial.html -->
+        <div class='row'>
+            <div class='col-4'>
+
+         <div class="result">
+            <input class='form-control mb-4' type="text" placeholder="Enter Your Address Here" name="address" required class="type-1 no-outline" style="border:none; color: #25d5e4;" id="input"/>
+         </div>
+         <div class="length range__slider" data-min="4" data-max="32">
+
+            <label for='slider' class="form-label" data-length='0' id="curLength">Amount to Generate:</label>
+            <input id='slider' type="range" class="form-range mb-3" min="4" max="32" value="4">
+
+        </div>
+
+
+        <span class="settings__title field-title">settings</span>
+        <ul class="list-group">
+          <li class="list-group-item mb-3">
+            <div class="form-check form-check-reverse">
+               <input class='form-check-input' type="checkbox" id="uppercase"/>
+               <label class="form-check-label stretched-link" for="uppercase">Add Random Letters</label>
+            </div>
+          </li>
+
+          <li class="list-group-item mb-3">
+            <div class="form-check form-check-reverse">
+               <input class='form-check-input' type="checkbox" id="lowercase"/>
+               <label class="form-check-label stretched-link" for="lowercase">Add Characters to Start</label>
+            </div>
+          </li>
+
+          <li class="list-group-item mb-3">
+            <div class="form-check form-check-reverse">
+               <input class='form-check-input' type="checkbox" id="symbol"/>
+               <label class="form-check-label stretched-link" for="symbol">Add Spaces</label>
+            </div>
+          </li>
+
+        </ul>
+
+
+                <button class="btn btn-info" id="generate">Jig Address</button>
+         <div>
+            <!-- <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" style="margin-top: 0px; margin-bottom: 0px; height: 229px;"></textarea>-->
+         </div>
+         <sub>&nbsp;</sub>
+         <sub>&nbsp;</sub>
+         <sub>&nbsp;</sub>
+         <p>&nbsp;</p>
+        <a style="text-decoration:none; text-align:left; color: #25d5e4; font-size: 14px;" href="#">blueberry.py</a>
+         <sub>&nbsp;</sub>
+      </div>
+      </div>
+
+      <div class='col-4'>
+      <div>
+         <textarea class="form-control no-outline" id="output" cols='60' rows="3" style="margin-top: 0px; margin-bottom: 0px; height: 594px; width: 594px;">// Recommended Usage &#13;&#10;// Use both Add Random Letters and Add Numbers To Start  </textarea>
+      </div>
+      </div>
+
+      </div>
+      <!-- partial -->
+      <script>
+const sliderProps = {
+	fill: "#25d5e4",
+	background: "rgba(255, 255, 255, 0.214)",
+};
+const generateButton = document.getElementById("generate");
+const slider = document.getElementById("slider");
+const curLength = document.getElementById("curLength");
+curLength.setAttribute("data-length", slider.value);
+slider.onchange = e => {
+    curLength.setAttribute("data-length", slider.value);
+}
+generateJig = (value, length = 3, infront = false, spaces = false, letters = false) => {
+    let jig = "";
+    const letter = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    const number = "0123456789";
+    
+    const genRandNum = () => {
+        return number[Math.floor(Math.random() * number.length)];
+    }
+    const genRandLet = () => {
+        return letter[Math.floor(Math.random() * number.length)];
+    }
+
+    for(let i = 1; i <= length; i++) {
+        const randomNumber = Math.floor(Math.random() * 3); //0, 1 or 2
+        if(randomNumber === 0) {
+            jig += genRandNum();
+        } else if(randomNumber === 1) {
+            if(!letters) {
+                jig += genRandNum();
+            }else {
+                jig += genRandLet();
+            }
+        } else if (randomNumber === 2) {
+            if(!spaces) {
+                jig += genRandNum();
+            }else {
+                jig += " ";
+            }
+        }
+    }
+
+    let newAddress = "";
+    if(infront) {
+        newAddress = jig + " " + value
+    } else {
+        newAddress = value + " " + jig;
+    }
+    return newAddress;
+}
+generateButton.onclick = () => {
+    const value = document.getElementById("input").value;
+    const infront = document.getElementById("lowercase").checked;
+    const spaces = document.getElementById("symbol").checked;
+    const letters = document.getElementById("uppercase").checked;
+    const slider = document.getElementById("slider").value;
+
+    let generatedJigs = "";
+    
+    for(let i = 1; i <= slider; i++) {
+        generatedJigs += "" + generateJig(value, undefined, infront, spaces, letters) + "\n";
+    }
+
+
+   document.getElementById("output").innerHTML = generatedJigs;
+}
+      </script>
+
+</div>
+{% endblock content %}
+

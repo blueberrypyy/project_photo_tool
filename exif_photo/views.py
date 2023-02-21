@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.views.generic import TemplateView
 from .models import ExifPhoto
 from django.conf import settings
@@ -9,6 +9,9 @@ from PIL import Image
 class HomePageView(TemplateView):
     template_name = 'home.html'
 
+def AddressEditView(request):
+    return render(request, 'address_edit.html')
+
 def ExifPageView(request):
     submitted = False
     photo_list = ExifPhoto.objects.all()
@@ -16,7 +19,7 @@ def ExifPageView(request):
         form = ExifPhotoForm(request.POST, request.FILES)
         if form.is_valid():
             form.save()
-            return redirect('success')
+            return redirect('home')
 
     else:
         form = ExifPhotoForm()
