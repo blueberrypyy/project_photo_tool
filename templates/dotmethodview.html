@@ -37,7 +37,6 @@ div {
             {{ form.email }}
                 </div>
                 
-            </div>
 
         <div class='row'>
             <div class="col-md-4">
@@ -76,126 +75,58 @@ div {
             <div class='col-md-6'>
             <div class='mb-3'>
                 <label class='form-label'>Output</label>
-                <textarea id='output' class='form-control' rows='16'>
-                <!--input type='text' class='form-control' id='output' /-->
-            </div>
-            </div>
-        </div>
+                <textarea id='output' class='form-control' rows='16'></textarea>
 
-        
-
-        </div>
-        </div>
-
-            <div class='col-md-6'>
-            <div class="mb-3">
-              <label for="exampleInput6" class="form-label">Street address</label>
-              <input type="text" class="form-control" id="exampleInput6" />
-            </div>
             </div>
 
-          
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Email Generator</title>
+  <meta charset="UTF-8">
+  <script>
+    function generateEmails() {
+      var at, counter, domain, dotpos, dotpos_over, email, email_list, new_email, user, user_list;
+      email = document.getElementById("email-input").value;
+      email_list = [email];
+      domain = "$@.+\\.com^";
+      at = email.indexOf("@");
+      domain = email.slice(at);
+      user = email.slice(0, at);
+      new_email = "";
+      counter = 0;
+      dotpos = 0;
+      dotpos_over = 0;
 
-        
-        <div class="row">
-          <div class="col-md-6 mb-4 mb-md-0">
-            <div class="mb-3">
-              <label for="exampleInput7" class="form-label">City</label>
-              <input type="text" class="form-control" id="exampleInput7" />
+      for (var i = 0, _pj_a = user.length - 1; i < _pj_a; i += 1) {
+        user_list = Array.from(user);
+        dotpos += 1;
+        user_list.splice(dotpos, 0, ".");
+        new_email = user_list.join("") + domain;
+
+        if (dotpos > user_list.length - 1) {
+          console.log("Full");
+        } else {
+          email_list.push(new_email);
+        }
+      }
+
+      document.getElementById("email-output").value = email_list.join("\n");
+    }
+  </script>
+</head>
+<body>
+  <h1>Email Generator</h1>
+  <p>Enter an email address:</p>
+  <input type="text" id="email-input">
+  <button onclick="generateEmails()">Generate</button>
+  <p>Generated email addresses:</p>
+  <textarea id="email-output" rows="10"></textarea>
+</body>
+</html>
+
+
             </div>
-          </div>
-
-          <div class="col-md-6 mb-4 mb-md-0">
-            <label for="exampleInput8" class="form-label">State</label>
-            <select
-                    id="exampleInput8"
-                    class="form-select mb-3"
-                    aria-label="Default select example"
-                    >
-              <option selected value="1">California</option>
-              <option value="2">Texas</option>
-            </select>
-          </div>
-        </div>
-
-        <div class="row">
-          <div class="col-md-6 mb-4 mb-md-0">
-            <div class="mb-3">
-              <label for="exampleInput9" class="form-label"
-                     >Postal code</label
-                >
-              <input type="text" class="form-control" id="exampleInput9" />
-            </div>
-          </div>
-
-          <div class="col-md-6 mb-4 mb-md-0">
-            <label for="exampleInput10" class="form-label">Country</label>
-            <select
-                    id="exampleInput10"
-                    class="form-select mb-3"
-                    aria-label="Default select example"
-                    >
-              <option selected value="1">USA</option>
-              <option value="2">Canada</option>
-            </select>
-          </div>
-        </div>
-
-        <div class="row">
-          <div class="col-md-6 mb-4 mb-md-0">
-            <div class="mb-3">
-              <label for="exampleInput11" class="form-label"
-                     >Old password</label
-                >
-              <input
-                     type="password"
-                     class="form-control"
-                     id="exampleInput11"
-                     />
-            </div>
-          </div>
-
-          <div class="col-md-6 mb-4 mb-md-0">
-            <div class="mb-3">
-              <label for="exampleInput12" class="form-label"
-                     >New password</label
-                >
-              <input
-                     type="password"
-                     class="form-control"
-                     id="exampleInput12"
-                     />
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!--div class='container'>
-        <div class='row'>
-            <div class='col-sm' align='center'>
-                <form method='POST'>
-                    {% csrf_token %}
-                    <div class='field has-addons'>
-                        <div class='control is-expanded'>
-                            {{ form.email }}
-                        </div>
-                        <div class='control'>
-                            <button class='btn btn-info'>Generate emails</button>
-                        </div>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
-</section>
-                                
-                            
-
-
-<div class='control is-expanded'>
-        {{ form.name }}
-</div>
 
 
 
