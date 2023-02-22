@@ -50,12 +50,12 @@ from .forms import DotMethodForm
 def DotMethodPageView(request):
     # Set variables and seperate user, @, domain
     
-    email_list = []
+    #email_list = []
 
-    if request.method == 'POST':
-        form = DotMethodForm(request.POST)
-        form.save()
-    form = DotMethodForm()
+    #if request.method == 'POST':
+    #    form = DotMethodForm(request.POST)
+    #    form.save()
+    #form = DotMethodForm()
 
 
 
