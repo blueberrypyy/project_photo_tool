@@ -50,9 +50,9 @@ function generateAddresses() {
   }
 
   const value = document.getElementById("input").value;
-  const infront = document.getElementById("lowercase").checked;
-  const spaces = document.getElementById("symbol").checked;
-  const letters = document.getElementById("uppercase").checked;
+  const infront = document.getElementById("start").checked;
+  const spaces = document.getElementById("whitespace").checked;
+  const letters = document.getElementById("letters").checked;
   const sliderValue = document.getElementById("slider").value;
 
   let generatedJigs = "";

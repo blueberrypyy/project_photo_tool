@@ -1,0 +1,13 @@
+Gruvbox color scheme:
+bg: #282828
+bg1: #3c3836
+bg2: #504945
+bg3: #665c54
+fg1: #ebdbb2
+fg3: #bdae93
+fg4: #a89984
+orange: #fe8019
+red: #fb4934
+green: #b8bb26
+aqua: #8ec07c
+yellow: #fabd2f

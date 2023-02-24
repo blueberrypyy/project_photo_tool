@@ -1,0 +1,49 @@
+label {
+    color: #a89984;
+}
+
+p {
+    color: #a89984;
+}
+
+div {
+    color: #a89984;
+}
+
+h2 {
+    color: #ebdbb2;
+}
+
+hr {
+    border: solid;
+    border-color: black;
+}
+
+input {
+    background-color: #282828; 
+    border: #181818; 
+    color: #b8bb26; 
+    font-family: Consolas,Menlo,"courier new",monospace;
+}
+
+textarea {
+    background-color: #282828; 
+    border: #181818; 
+    color: #fabd2f; 
+    font-family: Consolas,Menlo,"courier new",monospace;
+}
+
+.btn-info:hover {
+    }
+    .btn-info,
+    .btn-info:active,
+    .btn-info:visited, {
+        background-color: #fe8019;
+    }
+
+    .btn-info:focus {
+    background-color: yellow;
+    border-color: yellow;
+    color: black;
+    }
+
