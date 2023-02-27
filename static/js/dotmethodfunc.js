@@ -25,3 +25,4 @@ function generateEmails() {
 
       document.getElementById("email-output").value = email_list.join("\n");
     }
+
