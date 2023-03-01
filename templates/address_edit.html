@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 {% load static %}
-{% block title %}Address Jigger{% endblock %}
+{% block title %}Address J1gger{% endblock %}
 
 {% block content %}
 
@@ -96,7 +96,7 @@ textarea {
         <div class='row'>
         <div class='col-7 mx-auto'>
       <div class='shadow-lg p-4 rounded' style='background: #3c3836'>
-        <h2>Address Jigger</h2>
+        <h2>Address J1gger</h2>
         <p>Just enter your gmail and select how many variations to generate your emails</p>
         <hr/>
       <div class="card-body">
@@ -189,9 +189,16 @@ textarea {
 
     <!--Slider number -->
    <script>
-var div = document.getElementById('amount');
+var div = document.getElementById('emptypage');
 
-var input1 = document.getElementById("slider");
+const getSlider = document.getElementById("slider")
+var input1 = document.createElement('input');
+input1.setAttribute('id', 'test');
+input1.setAttribute('type', 'range');
+input1.setAttribute('min', 0);
+input1.setAttribute('max', 100);
+input1.setAttribute('step', 1);
+input1.setAttribute('value', 50);
 
 var value = document.createElement('p');
 value.setAttribute('id', 'sliderValue');
