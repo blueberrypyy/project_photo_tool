@@ -5,30 +5,52 @@
 {% block content %}
 
 <!--style rel='stylesheet' href='{% static "css/exifpage.css" %}'></style-->
+<style>
+label {
+    color: #ebdbb2;
+}
+
+p {
+    color: #a89984;
+
+}
+
+div {
+    color: #a89984;
+}
+h2 {
+    color: #ebdbb2;
+}
+hr {
+
+    border: solid;
+    border-color: black;
+}
+
+</style>
+
+
 
 <br>
 <div class='container'>
-    <h1 class='text-center' style='color: white;'>Exif Tool</h1>
-    <br>
 
-
+    <div class='row'>
+    <div class='col-7 mx-auto'>
     <div class='shadow-lg p-4 rounded' style='background: #3c3836'>
+    <h2>Exif Data Remover</h2>
+            <p>Drag your image into the box to remove exif data.</p>
+    <hr/>
+
         <div class='row'>
             
-        <div class='d-flex justify-content-center'>
-            <div class='col-6'>
                 <textarea class='w-100'></textarea>
                 <button class='btn btn-info w-100'></button>
-            </div>
 
-            <div class='col-6'>
-                <textarea class='w-100'></textarea>
-                <button class='btn btn-info w-100'></button>
-            </div>
                 
         </div>
-        </div>
 
+    </div>
+    </div>
     </div>
 </div>
 
