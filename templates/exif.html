@@ -4,6 +4,8 @@
 
 {% block content %}
 
+<script src="https://cdn.jsdelivr.net/npm/exifreader"></script>
+
 <!--style rel='stylesheet' href='{% static "css/exifpage.css" %}'></style-->
 <style>
 label {
@@ -27,6 +29,118 @@ hr {
     border-color: black;
 }
 
+
+  .file-upload {
+  background-color: #ffffff;
+  width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.file-upload-btn {
+  width: 100%;
+  margin: 0;
+  color: #ebdbb2;
+  background: #ebdbb2;
+  border: none;
+  padding: 10px;
+  border-radius: 4px;
+  border-bottom: 4px solid #15824B;
+  transition: all .2s ease;
+  outline: none;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.file-upload-btn:hover {
+  background: #fb4934;
+  color: #fb4934;
+  transition: all .2s ease;
+  cursor: pointer;
+}
+
+.file-upload-btn:active {
+  border: 0;
+  transition: all .2s ease;
+}
+
+.file-upload-content {
+  display: none;
+  text-align: center;
+}
+
+.file-upload-input {
+  position: absolute;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  outline: none;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.image-upload-wrap {
+  background-color: #282828 ;
+  margin-top: 0px;
+  border: 4px dashed #504945;
+  position: relative;
+}
+
+.image-dropping,
+.image-upload-wrap:hover {
+  border: 4px dashed #ebdbb2;
+}
+
+.image-title-wrap {
+  padding: 0 15px 15px 15px;
+  color: #fb4934;
+}
+
+.drag-text {
+  text-align: center;
+}
+
+.drag-text h3 {
+  font-weight: 100;
+  text-transform: uppercase;
+  color: #fb4934;
+  padding: 60px 0;
+}
+
+.file-upload-image {
+  max-height: 200px;
+  max-width: 200px;
+  margin: auto;
+  padding: 20px;
+}
+
+.remove-image {
+  width: 200px;
+  margin: 0;
+  color: #fff;
+  background: #cd4535;
+  border: none;
+  padding: 10px;
+  border-radius: 4px;
+  border-bottom: 4px solid #b02818;
+  transition: all .2s ease;
+  outline: none;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.remove-image:hover {
+  background: #c13b2a;
+  color: #ffffff;
+  transition: all .2s ease;
+  cursor: pointer;
+}
+
+.remove-image:active {
+  border: 0;
+  transition: all .2s ease;
+}
 </style>
 
 
@@ -44,17 +158,51 @@ hr {
         <div class='row'>
             
             <div class='col-6'>
-                <textarea class='w-100'></textarea>
-                <button class='btn btn-info w-100'></button>
+
+    <div class='d-flex' style='background-color: #504945;'>
+        <label id='drop'>Upload your image</label>
+    </div>
+                <!--alt drag and drop -->
+                <div class="image-upload-wrap">
+    <input class="file-upload-input" type='file' onchange="readURL(this);" accept="image/*" />
+    <div class="drag-text">
+      <h3>Drag and drop a file or select add Image</h3>
+    </div>
+  </div>
+  <div class="file-upload-content">
+    <img class="file-upload-image" src="#" alt="your image" />
+    </div>
+
+                <!-- Original drag n drop --> 
+<div class="container mx-auto">
+    <div class="d-flex justify-content-center p-2 mb-3">
+      <label id="drop" class="block cursor-pointer max-w-md mx-auto bg-white rounded-lg shadow-xl overflow-hidden sm:max-w-2xl ring-1 ring-slate-900/5 transition group hover:ring-slate-400 hover:text-slate-700 hover:shadow-md">
+        <span class="block border border-slate-200 border-2 border-dashed rounded-lg m-2 transition group-hover:border-slate-400">
+          <span class="block px-16 py-12">
+            <span>Drop the files here</span>
+            <input type="file" name="file_upload" class="hidden" />
+          </span>
+        </span>
+      </label>
+    </div>
+<button class='btn w-100 mb-auto' style='background-color: #fe8019;'>Rinse!</button>
+  </div>
+
             </div>
 
             <div class='col-6'>
-                <textarea class='w-100'></textarea>
-                <button class='btn btn-info w-100'></button>
-            </div>
 
+    <div class='d-flex' style='background-color: #504945;'>
+        <label>Output</label>
+        <button class='btn btn-sm ms-auto py-0' style='background-color: #fe8019; font-size: 0.8rem;'onclick = "downloadFile()">Save .txt File</button>
+    </div>
 
-                
+    <div class="d-flex p-2 rounded" style='background-color: #282828; height: 22rem; display: inline-flex;'>
+    <div id="results" style='font-color: #fabd2f; font-family: Consolas,Menlo,"courier new",monospace;' class=""></div>
+    </div>
+        </div>
+
+        <div class='row'>
         </div>
 
     </div>
@@ -64,4 +212,78 @@ hr {
 
 
 <script src='{% static "js/exifpage.js" %}'></script>
+
+<script>
+window.addEventListener('DOMContentLoaded', () => {
+  const area = document.getElementById('drop')
+  const input = area.querySelector('input')
+
+  const onDrop = function(e) {
+    e.preventDefault();
+    e.stopPropagation();
+    area.classList.remove('dropping');
+    processFiles(e.dataTransfer.files);
+  }
+
+  const onDrag = function(e) {
+    e.preventDefault();
+    e.stopPropagation();
+    area.classList.add('dropping');
+  }
+
+  const onLeave = function(e) {
+    e.preventDefault();
+    e.stopPropagation();
+    area.classList.remove('dropping');
+  }
+
+
+  const onSelect = function(e) {
+    processFiles(e.target.files);
+  }
+
+  area.addEventListener('dragenter', onDrag, false)
+  area.addEventListener('dragover', onDrag, false)
+  area.addEventListener('dragleave', onLeave, false)
+  area.addEventListener('drop', onDrop, false)
+  input.addEventListener('change', onSelect, false)
+});
+</script>
+
+<script>
+
+const results = document.getElementById('results')
+
+const div = function(text) {
+  const elem = document.createElement('div');
+  elem.innerHTML = text;
+  results.appendChild(elem);
+  elem.style.color = "#fabd2f";
+}
+
+const processFiles = async function(files) {
+  if (files && files.length) {
+    results.innerHTML = ''; // remove old results
+    for (let file of files) {
+      div(`<strong>${file.name}</strong>`);
+      let exif = null;
+      try {
+        exif = await ExifReader.load(file);
+      } catch(e) {
+        div(`<span class="text-red-700">${e.message}</span>`);
+      }
+      if (exif) {
+        for (let tag in exif) {
+          div(`${tag}: ${exif[tag].value} - ${exif[tag].description}`);
+        }
+      } else {
+        div(`No results`);
+      }
+      div(`&nbsp;`);
+    }
+  }
+}
+</script>
+
+
 {% endblock %}
