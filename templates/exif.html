@@ -179,12 +179,9 @@ hr {
                 <!-- Original drag n drop --> 
     <div class='image-upload-wrap mb-3'>
     <div class="d-flex justify-content-center">
-      <label id="drop" class="block cursor-pointer max-w-md mx-auto bg-white rounded-lg shadow-xl overflow-hidden sm:max-w-2xl ring-1 ring-slate-900/5 transition group hover:ring-slate-400 hover:text-slate-700 hover:shadow-md" style='height: 7rem'>
-        <span class="">
-          <span class="text-center">
-            <span class='text-center'>Drop the files here</span>
+      <label id="drop" class="" style='height: 7rem'>
+              <div class='span12 text-center mt-2' style='background-color: #282828;'><img src='{% static "images/icons8-image-file-64.png"%}' style='background-color: #282828;'/></br>Drop your files here</div>
             <input type="file" name="file_upload" class="invisible" />
-          </span>
         </span>
       </label>
       </div>
