@@ -159,11 +159,14 @@ hr {
             
             <div class='col-6'>
 
+
     <div class='d-flex' style='background-color: #504945;'>
         <label>Upload your image:</label>
     </div>
+
+    
                 <!--alt drag and drop -->
-                <div class="image-upload-wrap">
+                <!--div class="image-upload-wrap">
     <input class="file-upload-input" type='file' onchange="readURL(this);" accept="image/*" />
     <div class="drag-text">
       <h3>Drag and drop a file or select add Image</h3>
@@ -171,22 +174,22 @@ hr {
   </div>
   <div class="file-upload-content">
     <img class="file-upload-image" src="#" alt="your image" />
-    </div>
+    </div-->
 
                 <!-- Original drag n drop --> 
-<div class="container mx-auto">
-    <div class="d-flex justify-content-center p-2 mb-3">
-      <label id="drop" class="block cursor-pointer max-w-md mx-auto bg-white rounded-lg shadow-xl overflow-hidden sm:max-w-2xl ring-1 ring-slate-900/5 transition group hover:ring-slate-400 hover:text-slate-700 hover:shadow-md">
-        <span class="block border border-slate-200 border-2 border-dashed rounded-lg m-2 transition group-hover:border-slate-400">
-          <span class="block px-16 py-12">
-            <span>Drop the files here</span>
-            <input type="file" name="file_upload" class="hidden" />
+    <div class='image-upload-wrap mb-3'>
+    <div class="d-flex justify-content-center">
+      <label id="drop" class="block cursor-pointer max-w-md mx-auto bg-white rounded-lg shadow-xl overflow-hidden sm:max-w-2xl ring-1 ring-slate-900/5 transition group hover:ring-slate-400 hover:text-slate-700 hover:shadow-md" style='height: 7rem'>
+        <span class="">
+          <span class="text-center">
+            <span class='text-center'>Drop the files here</span>
+            <input type="file" name="file_upload" class="invisible" />
           </span>
         </span>
       </label>
+      </div>
     </div>
 <button class='btn w-100 mb-auto' style='background-color: #fe8019;'>Rinse!</button>
-  </div>
 
             </div>
 
