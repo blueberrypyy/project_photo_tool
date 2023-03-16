@@ -44,7 +44,7 @@ function generateAddresses() {
       if(infront) {
           newAddress = jig + " " + value
       } else {
-          newAddress = value + " " + jig;
+          newAddress = jig + " " + value
       }
       return newAddress;
   }
@@ -58,7 +58,7 @@ function generateAddresses() {
   let generatedJigs = "";
 
   for(let i = 1; i <= sliderValue; i++) {
-      generatedJigs += "" + generateJig(value, undefined, infront, spaces, letters) + "\n";
+      generatedJigs += "" + generateJig(value, undefined, spaces, letters) + "\n";
   }
 
   document.getElementById("output").innerHTML = generatedJigs;
