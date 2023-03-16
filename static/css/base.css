@@ -1,3 +1,7 @@
+body {
+    background-color: #282828;
+}
+
 label {
     color: #a89984;
 }
@@ -32,6 +36,7 @@ textarea {
     color: #fabd2f; 
     font-family: Consolas,Menlo,"courier new",monospace;
 }
+
 
 .btn-info:hover {
     }

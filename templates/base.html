@@ -1,7 +1,10 @@
 <!DOCTYPE html>
 
 {% load static %}
-<!--style rel='stylesheet' href='{% static "css/base.css" %}'></style-->
+<!--style rel='stylesheet' href='{% static "css/base.css" %}'></styleu-->
+<style>
+
+</style>
 
 
 <head>
@@ -17,33 +20,33 @@
 
 <!--body style='background-image: linear-gradient(to right, #2b2b2b, #1a1a1a);'-->
 <!--body style='background-image: url(https://images.pexels.com/photos/3586966/pexels-photo-3586966.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2); background-size: cover;'-->
-<body style='background: #282828'>
+<body style='background: #282828;'>
 
 
 
 <section id='nav-bar'>
-<nav style='background: rgba(0,0,0,0.2)' class="navbar mt-4 mx-5 navbar-dark navbar-expand-lg">
+<nav style='background: #282828' class="navbar mt-4 mb-4 mx-5 navbar-dark navbar-expand-lg">
   <div class="container-fluid">
-      <a class="navbar-brand" href="{% url 'home' %}">Rinsr</a>
+      <a class="navbar-brand" href="{% url 'home' %}" style='color: #ebdbb2;'>Exif Remover [Alpha]</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav ms-auto">
         <li class="nav-item">
-            <a class="nav-link" aria-current="page" href="{% url 'exif' %}">Exiftool</a>
+            <a class="nav-link mx-1" style='color: #ebdbb2;' aria-current="page" href="{% url 'exif' %}">Exiftool</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="{% url 'dotmethod' %}">Dot Method</a>
+            <a class="nav-link mx-1" style='color: #ebdbb2;' href="{% url 'dotmethod' %}">Dot Method</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="{% url 'address_edit' %}">Address Edit</a>
+            <a class="nav-link mx-1" style='color: #ebdbb2;' href="{% url 'address_edit' %}">Address Edit</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Address Gen</a>
+          <a class="nav-link mx-1" href="#" style='color: #ebdbb2;' alt='Addressgen'>[Locked]</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Full Profile Gen</a>
+          <a class="nav-link mx-1" href="#" style='color: #ebdbb2;' alt='Profilegen'>[Locked]</a>
         </li>
         <!--li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -65,10 +68,14 @@
   </div>
 </nav>
 </section>
-<br>
+
 
 
 {% block content %}
 {% endblock content %}
+
+<footer class='mt-5' style=''>
+    <center><a href='https://twitter.com/blueberry_py' style='color: #458588; text-decoration: none;'>Made by blueberry.py</a></center>
+</footer>
 </body>
 
