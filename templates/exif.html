@@ -212,79 +212,9 @@ hr {
 </div>
 
 
-<script src='{% static "js/exifpage.js" %}'></script>
-
-<script>
-window.addEventListener('DOMContentLoaded', () => {
-  const area = document.getElementById('drop')
-  const input = area.querySelector('input')
-
-  const onDrop = function(e) {
-    e.preventDefault();
-    e.stopPropagation();
-    area.classList.remove('dropping');
-    processFiles(e.dataTransfer.files);
-  }
-
-  const onDrag = function(e) {
-    e.preventDefault();
-    e.stopPropagation();
-    area.classList.add('dropping');
-  }
-
-  const onLeave = function(e) {
-    e.preventDefault();
-    e.stopPropagation();
-    area.classList.remove('dropping');
-  }
-
-
-  const onSelect = function(e) {
-    processFiles(e.target.files);
-  }
-
-  area.addEventListener('dragenter', onDrag, false)
-  area.addEventListener('dragover', onDrag, false)
-  area.addEventListener('dragleave', onLeave, false)
-  area.addEventListener('drop', onDrop, false)
-  input.addEventListener('change', onSelect, false)
-});
-</script>
-
-<script>
-
-const results = document.getElementById('results')
-
-const div = function(text) {
-  const elem = document.createElement('div');
-  elem.innerHTML = text;
-  results.appendChild(elem);
-  elem.style.color = "#fabd2f";
-}
-
-const processFiles = async function(files) {
-  if (files && files.length) {
-    results.innerHTML = ''; // remove old results
-    for (let file of files) {
-      div(`<strong>${file.name}</strong>`);
-      let exif = null;
-      try {
-        exif = await ExifReader.load(file);
-      } catch(e) {
-        div(`<span class="text-red-700">${e.message}</span>`);
-      }
-      if (exif) {
-        for (let tag in exif) {
-          div(`${tag}: ${exif[tag].value} - ${exif[tag].description}`);
-        }
-      } else {
-        div(`No results`);
-      }
-      div(`&nbsp;`);
-    }
-  }
-}
-</script>
+<script src='{% static "js/exifpage_photo_box.js" %}'></script>
+<script src="{% static 'js/exifpage_photo_upload.js' %}"></script>
+<script src="{% static 'js/exifpage_exif_reader.js' %}"></script>
 
 
 {% endblock %}
