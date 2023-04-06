@@ -4,6 +4,7 @@
 
 <h3>Exif Photo Tool</h3>
 ![alt text](https://github.com/blueberrypyy/project_photo_tool/blob/master/static/images/Exif1.png)
+
 <p>Exif Photo Tool is a client-side tool that can output the exif data of any photo you upload. To get the exif data, just drag your photo or click in the box that says "Drop your files here". Currently the app will only allow you to view the exif data. In the future, I will make updates to expand functionality including the option to save the data to a .txt file and also include the option to remove the exif data of the photo.</p>
 
 </br>
