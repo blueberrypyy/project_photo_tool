@@ -1,6 +1,7 @@
 <h1>PROJECT_PHOTO_TOOL</h1>
 
 <p>Project_photo_tool is a web application that includes tools written in JavaScript.</p>
+<p>View the application here: <a href='https://exif-photo-tool.onrender.com/'>https://exif-photo-tool.onrender.com</a></p>
 
 <h3>Exif Photo Tool</h3>
 <img src='https://github.com/blueberrypyy/project_photo_tool/blob/master/static/images/Exif1.png'/ alt='Exif Tool'>
