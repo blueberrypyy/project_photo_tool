@@ -21,27 +21,27 @@ function generateAddresses() {
           return letter[Math.floor(Math.random() * number.length)];
       }
 
-      for(let i = 1; i <= length; i++) {
+      for (let i = 1; i <= length; i++) {
           const randomNumber = Math.floor(Math.random() * 3); //0, 1 or 2
-          if(randomNumber === 0) {
+          if (randomNumber === 0) {
               jig += genRandNum();
-          } else if(randomNumber === 1) {
-              if(!letters) {
+          } else if (randomNumber === 1) {
+              if (!letters) {
                   jig += genRandNum();
-              }else {
+              } else {
                   jig += genRandLet();
               }
           } else if (randomNumber === 2) {
-              if(!spaces) {
+              if (!spaces) {
                   jig += genRandNum();
-              }else {
+              } else {
                   jig += " ";
               }
           }
       }
 
       let newAddress = "";
-      if(infront) {
+      if (infront) {
           newAddress = jig + " " + value
       } else {
           newAddress = value + " " + jig;
@@ -57,7 +57,7 @@ function generateAddresses() {
 
   let generatedJigs = "";
 
-  for(let i = 1; i <= sliderValue; i++) {
+  for (let i = 1; i <= sliderValue; i++) {
       generatedJigs += "" + generateJig(value, undefined, infront, spaces, letters) + "\n";
   }
 
