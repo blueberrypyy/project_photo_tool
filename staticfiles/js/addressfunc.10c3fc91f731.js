@@ -9,7 +9,7 @@ function generateAddresses() {
   slider.onchange = e => {
       curLength.setAttribute("data-length", slider.value);
   }
-  generateJig = (value, length = 3, spaces = false, numbers = false) => {
+  generateJig = (value, length = 3, onlyLetters = false, spaces = false, numbers = false) => {
       let jig = "";
       const letter = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
       const number = "0123456789";
@@ -52,7 +52,7 @@ function generateAddresses() {
   let generatedJigs = "";
 
   for (let i = 1; i <= sliderValue; i++) {
-      generatedJigs += "" + generateJig(value, undefined, spaces, numbers) + "\n";
+      generatedJigs += "" + generateJig(value, undefined, onlyLetters, spaces, numbers) + "\n";
   }
 
   document.getElementById("output").innerHTML = generatedJigs;

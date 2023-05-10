@@ -9,7 +9,7 @@ function generateAddresses() {
   slider.onchange = e => {
       curLength.setAttribute("data-length", slider.value);
   }
-  generateJig = (value, length = 3, spaces = false, numbers = false) => {
+  generateJig = (value, length = 3, spaces = false, letters = false) => {
       let jig = "";
       const letter = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
       const number = "0123456789";
@@ -24,16 +24,16 @@ function generateAddresses() {
       for (let i = 1; i <= length; i++) {
           const randomNumber = Math.floor(Math.random() * 3); 
           if (randomNumber === 0) {
-              jig += genRandLet();
+              jig += genRandNum();
           } else if (randomNumber === 1) {
-              if (!numbers) {
-                  jig += genRandLet();
-              } else {
+              if (!letters) {
                   jig += genRandNum();
+              } else {
+                  jig += genRandLet();
               }
           } else if (randomNumber === 2) {
               if (!spaces) {
-                  jig += genRandLet();
+                  jig += genRandNum();
               } else {
                   jig += " ";
               }
@@ -46,13 +46,13 @@ function generateAddresses() {
 
   const value = document.getElementById("input").value;
   const spaces = document.getElementById("whitespace").checked;
-  const numbers = document.getElementById("numbers").checked;
+  const letters = document.getElementById("letters").checked;
   const sliderValue = document.getElementById("slider").value;
 
   let generatedJigs = "";
 
   for (let i = 1; i <= sliderValue; i++) {
-      generatedJigs += "" + generateJig(value, undefined, spaces, numbers) + "\n";
+      generatedJigs += "" + generateJig(value, undefined, spaces, letters) + "\n";
   }
 
   document.getElementById("output").innerHTML = generatedJigs;
