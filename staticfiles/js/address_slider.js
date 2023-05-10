@@ -13,9 +13,9 @@ var value = document.createElement('p');
 value.setAttribute('id', 'sliderValue');
 value.innerHTML = input1.value;
 
-form.appendChild(input1);
-div.appendChild(form);
-div.appendChild(value);
+//form.appendChild(input1);
+//div.appendChild(form);
+//div.appendChild(value);
 
 // To update the slider value dynamically
 input1.oninput = function() {
