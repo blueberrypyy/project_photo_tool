@@ -9,7 +9,7 @@ from PIL import Image
 class HomePageView(TemplateView):
     template_name = 'home.html'
 
-class TestPageView(TemplateView):
+class TestingPageView(TemplateView):
     template_name = 'newfeature_testing.html'
 
 def AddressEditView(request):
@@ -23,7 +23,6 @@ def ExifPageView(request):
         if form.is_valid():
             form.save()
             return redirect('home')
-
     else:
         form = ExifPhotoForm()
         if 'submitted' in request.GET:

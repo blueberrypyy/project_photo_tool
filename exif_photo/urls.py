@@ -1,5 +1,5 @@
 from django.urls import path
-from .views import HomePageView, ExifPageView, DotMethodPageView, AddressEditView
+from .views import HomePageView, ExifPageView, DotMethodPageView, AddressEditView, TestingPageView
 from django.conf.urls.static import static
 from django.conf import settings
 
