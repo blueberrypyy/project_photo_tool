@@ -9,6 +9,9 @@ from PIL import Image
 class HomePageView(TemplateView):
     template_name = 'home.html'
 
+class TestPageView(TemplateView):
+    template_name = 'newfeature_testing.html'
+
 def AddressEditView(request):
     return render(request, 'address_edit.html')
 

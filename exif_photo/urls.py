@@ -8,4 +8,5 @@ urlpatterns = [
         path('exif/', ExifPageView, name='exif'),
         path('dotmethod/', DotMethodPageView, name='dotmethod'),
         path('address_edit/', AddressEditView, name='address_edit'),
-        ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+        path('testing/', TestingPageView, name='testing'),
+        ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
