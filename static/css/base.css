@@ -1,29 +1,32 @@
 :root {
     /* Dark brown theme */
     --theme-brown-bg: #282828;
+    --theme-brown-card: #3c3836;
     --theme-brown-label: #a89984;
     --theme-brown-input-bg: #282828;
     --theme-brown-input-border: #181818;;
     --theme-brown-input-color:#b8bb26;
     --theme-brown-p: #a89984;
     --theme-brown-div: #a89984;
-    --theme-brown-h: #ebdbb2;
+    --theme-brown-text: #ebdbb2;
     --theme-brown-textarea-bg: #282828;
     --theme-brown-textarea-border: #181818;
     --theme-brown-textarea-color: #fabd2f;
 
     /* Dark blue theme*/
-    --theme-brown-bg: #282828;
-    --theme-brown-label: #a89984;
+    --theme-brown-bg: #282a36;
+    --theme-brown-card: #44475a;
+    --theme-brown-label: #6272a4;
     --theme-brown-input-bg: #282828;
     --theme-brown-input-border: #181818;;
-    --theme-brown-input-color:#b8bb26;
-    --theme-brown-p: #a89984;
-    --theme-brown-div: #a89984;
-    --theme-brown-h: #ebdbb2;
-    --theme-brown-textarea-bg: #282828;
+    --theme-brown-input-color: #f1fa8c;
+    --theme-brown-p: #6272a4;
+    --theme-brown-div: #6272a4;
+    --theme-brown-text: #bd93f9;
+    --theme-brown-textarea-bg: #282a36;
     --theme-brown-textarea-border: #181818;
-    --theme-brown-textarea-color: #fabd2f;
+    --theme-brown-textarea-color: #ff79c6;
+    --theme-blue-btn: #50fa7b;
 
 
 }
