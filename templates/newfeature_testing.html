@@ -14,7 +14,160 @@
     <script src='https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js'></script>
 </head> 
 
-<link rel='stylesheet' href='{% static "css/theme_dark.css" %}'></link>
+<!--style>
+:root {
+    /* Dark brown theme */
+    --theme-brown-bg: #282828;
+    --theme-brown-card: #3c3836;
+    --theme-brown-label: #a89984;
+    --theme-brown-input-bg: #282828;
+    --theme-brown-input-border: #181818;;
+    --theme-brown-input-color:#b8bb26;
+    --theme-brown-p: #a89984;
+    --theme-brown-div: #a89984;
+    --theme-brown-text: #ebdbb2;
+    --theme-brown-textarea-bg: #282828;
+    --theme-brown-textarea-border: #181818;
+    --theme-brown-textarea-color: #fabd2f;
+
+    /* Dark blue theme white:#f8f8f2*/
+    --theme-blue-bg: #282a36;
+    --theme-blue-card: #44475a;
+    --theme-blue-label: #6272a4;
+    --theme-blue-input-bg: #282828;
+    --theme-blue-input-border: #181818;;
+    --theme-blue-input-color: #f1fa8c;
+    --theme-blue-p: #6272a4;
+    --theme-blue-div: #6272a4;
+    --theme-blue-text: #bd93f9;
+    --theme-blue-textarea-bg: #282a36;
+    --theme-blue-textarea-border: #181818;
+    --theme-blue-textarea-color: #ff79c6;
+    --theme-blue-btn: #50fa7b;
+
+    /* Default theme */
+    --theme-bg: var(--theme-brown-bg);
+    --theme-card: var(--theme-brown-card);
+    --theme-label: var(--theme-brown-label);
+    --theme-input-bg: var(--theme-brown-input-bg);
+    --theme-input-border: var(--theme-brown-input-border);
+    --theme-input-color: var(--theme-brown-input-color);
+    --theme-p: var(--theme-brown-p);
+    --theme-div: var(--theme-brown-div);
+    --theme-text: var(--theme-brown-text);
+    --theme-textarea-bg: var(--theme-brown-textarea-bg);
+    --theme-textarea-border: var(--theme-brown-textarea-border);
+    --theme-textarea-color: var(--theme-brown-textarea-color);
+    --theme-blue-btn: var(--theme-blue-btn);
+}
+
+#page {
+    background-color: var(--theme-bg);
+}
+
+/* Switched theme */
+.theme:checked ~ #page {
+    --theme-bg: var(--theme-blue-bg);
+    --theme-card: var(--theme-blue-card);
+    --theme-label: var(--theme-blue-label);
+    --theme-input-bg: var(--theme-blue-input-bg);
+    --theme-input-border: var(--theme-blue-input-border);
+    --theme-input-color: var(--theme-blue-input-color);
+    --theme-p: var(--theme-blue-p);
+    --theme-div: var(--theme-blue-div);
+    --theme-text: var(--theme-blue-text);
+    --theme-textarea-bg: var(--theme-blue-textarea-bg);
+    --theme-textarea-border: var(--theme-blue-textarea-border);
+    --theme-textarea-color: var(--theme-blue-textarea-color);
+    --theme-blue-btn: var(--theme-blue-btn);
+}
+
+
+</style-->
+
+<!--style>
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+  }
+  .theme-light {
+    --color-primary: #0060df;
+    --color-secondary: #fbfbfe;
+    --color-accent: #fd6f53;
+    --font-color: #000000;
+  }
+  .theme-dark {
+    --color-primary: #17ed90;
+    --color-secondary: #243133;
+    --color-accent: #12cdea;
+    --font-color: #ffffff;
+  }
+  .container {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    background: var(--color-secondary);
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  h1 {
+    color: var(--font-color);
+  }
+  button {
+    color: var(--font-color);
+    background: var(--color-primary);
+    padding: 10px 20px;
+    border: 0;
+    border-radius: 5px;
+  }
+</style-->
+
+<link rel='stylesheet' href='{% static "css/theme_test.css" %}'></link-->
+
+<!DOCTYPE html>
+<html lang="en" class="theme-light">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./styles.css" type="text/css" />
+</head>
+
+<body>
+    <div class="container">
+        <h1>Theme Switcher</h1>
+        <button id="switch" onclick="toggleTheme()">Switch</button>
+    </div>
+
+<div class="container">
+        <h1>Theme Switcher</h1>
+        <button id="switch" onclick="toggleTheme()">Switch</button>
+    </div>
+
+<div class='container'>
+<div class='ms-auto form-check form-switch'>
+    <p>Night mode</p>
+    <input class="ms-auto form-check-input" onclick="toggleTheme()" type="checkbox" role="switch" id="switch">
+</div>
+</div>
+
+    
+<script src='{% static "js/themefunc.js" %}'></script>
+
+</body>
+
+</html>
+
+<!--body>
+<div class='ms-auto form-check form-switch'>
+    <p>Night mode</p>
+    <input type="checkbox" id="theme">
+</div>
+<div id='page'>
 
 
 
@@ -42,4 +195,6 @@
 
 <input class="form-check-input mb-1" type="checkbox" role="switch" id="whitespace">
 
+</div>
+</body-->
 {% endblock content %}

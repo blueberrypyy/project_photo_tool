@@ -1,59 +1,72 @@
-:root {
+.theme-brown {
     /* Dark brown theme */
-    --theme-brown-bg: #282828;
-    --theme-brown-card: #3c3836;
-    --theme-brown-label: #a89984;
-    --theme-brown-input-bg: #282828;
-    --theme-brown-input-border: #181818;;
-    --theme-brown-input-color:#b8bb26;
-    --theme-brown-p: #a89984;
-    --theme-brown-div: #a89984;
-    --theme-brown-text: #ebdbb2;
-    --theme-brown-textarea-bg: #282828;
-    --theme-brown-textarea-border: #181818;
-    --theme-brown-textarea-color: #fabd2f;
+    --theme-bg: #282828;
+    --theme-card: #3c3836;
+    --theme-label: #a89984;
+    --theme-input-bg: #282828;
+    --theme-input-border: #181818;;
+    --theme-input-color:#b8bb26;
+    --theme-p: #a89984;
+    --theme-div: #a89984;
+    --theme-text: #ebdbb2;
+    --theme-textarea-bg: #282828;
+    --theme-textarea-border: #181818;
+    --theme-textarea-color: #fabd2f;
+}
 
+.theme-blue {
     /* Dark blue theme white:#f8f8f2*/
-    --theme-blue-bg: #282a36;
-    --theme-blue-card: #44475a;
-    --theme-blue-label: #6272a4;
-    --theme-blue-input-bg: #282828;
-    --theme-blue-input-border: #181818;;
-    --theme-blue-input-color: #f1fa8c;
-    --theme-blue-p: #6272a4;
-    --theme-blue-div: #6272a4;
-    --theme-blue-text: #bd93f9;
-    --theme-blue-textarea-bg: #282a36;
-    --theme-blue-textarea-border: #181818;
-    --theme-blue-textarea-color: #ff79c6;
-    --theme-blue-btn: #50fa7b;
-
-    /* Default theme */
-    --theme-def-bg: var(--theme-brown-bg);
-    --theme-def-card: var(--theme-brown-card);
-    --theme-def-label: var(--theme-brown-label);
-    --theme-def-input-bg: var(--theme-brown-input-bg);
-    --theme-def-input-border: var(--theme-brown-input-border);
-    --theme-def-input-color: var(--theme-brown-input-color);
-    --theme-def-p: var(--theme-brown-p);
-    --theme-def-div: var(--theme-brown-div);
-    --theme-def-text: var(--theme-brown-text);
-    --theme-def-textarea-bg: var(--theme-brown-textarea-bg);
-    --theme-def-textarea-border: var(--theme-brown-textarea-border);
-    --theme-def-textarea-color: var(--theme-brown-textarea-color);
-    --theme-def-blue-btn: var(--theme-blue-btn);
+    --theme-bg: #282a36;
+    --theme-card: #44475a;
+    --theme-label: #6272a4;
+    --theme-input-bg: #282828;
+    --theme-input-border: #181818;;
+    --theme-input-color: #f1fa8c;
+    --theme-p: #6272a4;
+    --theme-div: #6272a4;
+    --theme-text: #bd93f9;
+    --theme-textarea-bg: #282a36;
+    --theme-textarea-border: #181818;
+    --theme-textarea-color: #ff79c6;
+    --theme-btn: #50fa7b;
 }
 
-/* Switched theme */
-.theme-switch:checked ~ #page {
-
-
-
-
+    /* Default theme 
+    --theme-bg: var(--theme-brown-bg);
+    --theme-card: var(--theme-brown-card);
+    --theme-label: var(--theme-brown-label);
+    --theme-input-bg: var(--theme-brown-input-bg);
+    --theme-input-border: var(--theme-brown-input-border);
+    --theme-input-color: var(--theme-brown-input-color);
+    --theme-p: var(--theme-brown-p);
+    --theme-div: var(--theme-brown-div);
+    --theme-text: var(--theme-brown-text);
+    --theme-textarea-bg: var(--theme-brown-textarea-bg);
+    --theme-textarea-border: var(--theme-brown-textarea-border);
+    --theme-textarea-color: var(--theme-brown-textarea-color);
+    --theme-blue-btn: var(--theme-blue-btn);
 }
+
+ Switched theme 
+#theme:checked ~ #page {
+    --theme-bg: var(--theme-blue-bg);
+    --theme-card: var(--theme-blue-card);
+    --theme-label: var(--theme-blue-label);
+    --theme-input-bg: var(--theme-blue-input-bg);
+    --theme-input-border: var(--theme-blue-input-border);
+    --theme-input-color: var(--theme-blue-input-color);
+    --theme-p: var(--theme-blue-p);
+    --theme-div: var(--theme-blue-div);
+    --theme-text: var(--theme-blue-text);
+    --theme-textarea-bg: var(--theme-blue-textarea-bg);
+    --theme-textarea-border: var(--theme-blue-textarea-border);
+    --theme-textarea-color: var(--theme-blue-textarea-color);
+    --theme-blue-btn: var(--theme-blue-btn);
+}*/
+
 
 body {
-    background-color: #282828;
+    background-color: var(--theme-bg);
 }
 
 label {
