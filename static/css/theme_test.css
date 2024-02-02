@@ -1,11 +1,11 @@
 
-  .theme-light {
+  .theme-brown {
     --color-primary: #fbfbfe;
     --color-secondary: #282828;
     --color-accent: #fd6f53;
     --font-color: #000000;
   }
-  .theme-dark {
+  .theme-blue {
     --color-primary: #243133;
     --color-secondary: #282a36;
     --color-accent: #12cdea;

@@ -3,13 +3,13 @@ function setTheme(themeName) {
 }
 
 function toggleTheme() {
-    if (document.documentElement.className === 'theme-dark') {
-        setTheme('theme-light');
+    if (document.documentElement.className === 'theme-blue') {
+        setTheme('theme-brown');
     } else {
-        setTheme('theme-dark');
+        setTheme('theme-blue');
     }
 }
 
 (function () {
-    setTheme('theme-light');
+    setTheme('theme-brown');
 })();

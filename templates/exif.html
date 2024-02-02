@@ -181,13 +181,13 @@ hr {
     <div class='image-upload-wrap mb-3'>
     <div class="d-flex justify-content-center">
       <label id="drop" class="" style='height: 7rem'>
-              <div class='span text-center mt-2' style='background-color: #282828;'><img src='{% static "images/icons8-image-file-64.png" %}' style='background-color: #282828;'/></br>Drop your files here</div>
+              <div class='span text-center mt-2' style='background-color: var(--theme-bg);'><img src='{% static "images/icons8-image-file-64.png" %}' style='background-color: #282828;'/></br>Drop your files here</div>
             <input type="file" name="file_upload" class="invisible" />
         </span>
       </label>
       </div>
     </div>
-<button class='btn w-100 mb-3' style='background-color: #fe8019;'>Rinse!</button>
+<button class='btn w-100 mb-3' style='background-color: var(--theme-btn)'>Rinse!</button>
 
             </div>
 
@@ -195,10 +195,10 @@ hr {
 
     <div class='d-flex' style='background-color: #504945;'>
         <label>Output:</label>
-        <button class='btn btn-sm ms-auto py-0' style='background-color: #fe8019; font-size: 0.8rem;'onclick = "downloadFile()">Save as .txt</button>
+        <button class='btn btn-sm ms-auto py-0' style='background-color: var(--theme-btn); font-size: 0.8rem;'onclick = "downloadFile()">Save as .txt</button>
     </div>
 
-    <div class="d-flex p-2 rounded" style='background-color: #282828; height: 22rem; display: inline-flex;'>
+    <div class="d-flex p-2 rounded" style='background-color: var(--theme-bg); height: 22rem; display: inline-flex;'>
     <div id="results" style='font-color: #fabd2f; font-family: Consolas,Menlo,"courier new",monospace;' class=""></div>
     </div>
         </div>
