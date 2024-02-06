@@ -8,27 +8,6 @@
 
 <!--style rel='stylesheet' href='{% static "css/exifpage.css" %}'></style-->
 <style>
-label {
-    color: #ebdbb2;
-}
-
-p {
-    color: #a89984;
-
-}
-
-div {
-    color: #a89984;
-}
-h2 {
-    color: #ebdbb2;
-}
-hr {
-
-    border: solid;
-    border-color: black;
-}
-
 
   .file-upload {
   background-color: #ffffff;
@@ -81,7 +60,7 @@ hr {
 }
 
 .image-upload-wrap {
-  background-color: #282828 ;
+  background-color: var(--theme-bg);
   margin-top: 0px;
   border: 4px dashed #504945;
   position: relative;
@@ -150,7 +129,7 @@ hr {
 
     <div class='row'>
     <div class='col-12 col-sm-12 col-md-10 col-lg-8 col-xl-7 mx-auto'>
-    <div class='shadow-lg p-4 rounded' style='background: #3c3836'>
+    <div class='shadow-lg p-4 rounded'>
     <h2>Exif Data Viewer</h2>
             <p>Drag your image into the box to view it's exif data.</p>
             <p style='color:  #fb4934;'>Please note: this tool is in alpha stage. Only exif data view is available. Exif removal and photo download function is coming soon</p>
@@ -161,7 +140,7 @@ hr {
             <div class='col-6 col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6'>
 
 
-    <div class='d-flex' style='background-color: #504945;'>
+    <div class='d-flex' id='tool-tab'>
         <label>Upload your image:</label>
     </div>
 
@@ -181,7 +160,7 @@ hr {
     <div class='image-upload-wrap mb-3'>
     <div class="d-flex justify-content-center">
       <label id="drop" class="" style='height: 7rem'>
-              <div class='span text-center mt-2' style='background-color: var(--theme-bg);'><img src='{% static "images/icons8-image-file-64.png" %}' style='background-color: #282828;'/></br>Drop your files here</div>
+              <div class='span text-center mt-2'><img src='{% static "images/icons8-image-file-64.png" %}' style='background-color: #282828;'/></br>Drop your files here</div>
             <input type="file" name="file_upload" class="invisible" />
         </span>
       </label>
@@ -193,13 +172,13 @@ hr {
 
             <div class='col-6 col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6'>
 
-    <div class='d-flex' style='background-color: #504945;'>
+    <div class='d-flex' id='tool-tab'>
         <label>Output:</label>
         <button class='btn btn-sm ms-auto py-0' style='background-color: var(--theme-btn); font-size: 0.8rem;'onclick = "downloadFile()">Save as .txt</button>
     </div>
 
-    <div class="d-flex p-2 rounded" style='background-color: var(--theme-bg); height: 22rem; display: inline-flex;'>
-    <div id="results" style='font-color: #fabd2f; font-family: Consolas,Menlo,"courier new",monospace;' class=""></div>
+    <div class="d-flex p-2 rounded" style='height: 22rem; display: inline-flex;'>
+    <div id="results" style='color=var(--theme-output-color); font-family: Consolas,Menlo,"courier new",monospace;' class=""></div>
     </div>
         </div>
 

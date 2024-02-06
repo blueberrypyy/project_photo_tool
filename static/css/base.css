@@ -11,9 +11,10 @@
     --theme-main-text: #ebdbb2;
     --theme-sub-text: #bdae93;
     --theme-textarea-bg: #282828;
-    --theme-textarea-border: #181818;
-    --theme-textarea-color: #fabd2f;
+    --theme-output-border: #181818;
+    --theme-output-color: #fabd2f;
     --theme-btn: #fe8019;
+    --theme-footer-text: #458588;
 }
 
 .theme-blue {
@@ -26,12 +27,14 @@
     --theme-input-color: #f1fa8c;
     --theme-p: #6272a4;
     --theme-div: #6272a4;
-    --theme-main-text: #bd93f9;
-    --theme-sub-text: #bd93f9;
+    --theme-purple: #bd93f9;
+    --theme-main-text: #abb2bf;
+    --theme-sub-text: #6272a4;
     --theme-textarea-bg: #282a36;
-    --theme-textarea-border: #181818;
-    --theme-textarea-color: #ff79c6;
+    --theme-output-border: #181818;
+    --theme-output-color: #ff79c6;
     --theme-btn: #50fa7b;
+    --theme-footer-text: #ffb86c;
 }
 
     /* Default theme 
@@ -73,10 +76,11 @@ body {
 }
 
 label {
-    color: #a89984;
+    color: var(--theme-sub-text);
 }
 
-a {
+a, 
+a:hover {
     color: var(--theme-input-color);
 }
 
@@ -96,6 +100,10 @@ h1, h2, h3 {
     color: var(--theme-main-text);
 }
 
+h2 {
+    color: var(--theme-main-text);
+}
+
 hr {
     border: solid;
     border-color: black;
@@ -109,9 +117,9 @@ input {
 }
 
 textarea {
-    background-color: #282828; 
+    background-color: var(--theme-bg); 
     border: #181818; 
-    color: #fabd2f; 
+    color: var(--theme-output-color); 
     font-family: Consolas,Menlo,"courier new",monospace;
 }
 
@@ -120,10 +128,34 @@ button {
     border-color: var(--theme-btn);
 }
 
+img {
+    background: var(--theme-bg);
+}
+
+.span {
+    color: var(--theme-sub-text);
+}
+
+.d-flex {
+    background: var(--theme-bg);
+}
+
+.shadow, 
+.shadow-lg {
+    background: var(--theme-card);
+}
+
+.footer-text,
+.footer-text:hover {
+    color: var(--theme-footer-text);
+    text-decoration: none;
+}
+
 .modal-content {
     background: var(--theme-card);
 }
 
+.btn,
 .btn-info {
     background-color: var(--theme-btn);
     border-color: var(--theme-btn);
@@ -146,3 +178,25 @@ button {
     color: black;
     }
 
+#tool-tab {
+    background-color: var(--theme-card-color);
+}
+
+#results {
+    color: var(--theme-output-color);
+}
+
+#email-input {
+    background-color: var(--theme-bg); 
+    border: #181818; 
+    color: var(--theme-input-color); 
+    font-family: Consolas,Menlo,"courier new",monospace;
+}
+
+#email-output {
+    background-color: var(--theme-bg); 
+    border: #181818; 
+    color: var(--theme-output-color); 
+    font-family: Consolas,Menlo,"courier new",monospace;
+}
+}

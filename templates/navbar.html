@@ -1,25 +1,25 @@
 <nav style='background: rgba(255, 0, 0, 0.0);' class="navbar mt-4 mb-4 mx-1 mx-sm-5 navbar-dark navbar-expand-lg">
   <div class="container-fluid">
-      <a class="navbar-brand" href="{% url 'home' %}" style='color: #ebdbb2;'>Exif Remover [v1.1]</a>
+      <a class="navbar-brand" href="{% url 'home' %}" style='color: var(--theme-main-text);'>Exif Remover [v1.1]</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav ms-auto">
         <li class="nav-item">
-            <a class="nav-link mx-1" style='color: #ebdbb2;' aria-current="page" href="{% url 'exif' %}">Exiftool</a>
+            <a class="nav-link mx-1" style='color: var(--theme-main-text);' aria-current="page" href="{% url 'exif' %}">Exiftool</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link mx-1" style='color: #ebdbb2;' href="{% url 'dotmethod' %}">Dot Method</a>
+            <a class="nav-link mx-1" style='color: var(--theme-main-text);' href="{% url 'dotmethod' %}">Dot Method</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link mx-1" style='color: #ebdbb2;' href="{% url 'address_edit' %}">Address Edit</a>
+            <a class="nav-link mx-1" style='color: var(--theme-main-text);' href="{% url 'address_edit' %}">Address Edit</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link mx-1" href="#" style='color: #a89984;' alt='Addressgen'>[Locked]</a>
+          <a class="nav-link mx-1" href="#" style='color: var(--theme-sub-text);' alt='Addressgen'>[Locked]</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link mx-1" href="#" style='color: #a89984;' alt='Profilegen'>[Locked]</a>
+          <a class="nav-link mx-1" href="#" style='color: var(--theme-sub-text);' alt='Profilegen'>[Locked]</a>
         </li>
         <!--li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">

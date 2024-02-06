@@ -5,41 +5,6 @@
 {% block content %}
 
 <style>
-label {
-    color: #ebdbb2;
-}
-
-p {
-    color: #a89984;
-}
-
-div {
-    color: #a89984;
-}
-
-h2 {
-    color: #ebdbb2;
-}
-
-hr {
-    border: solid;
-    border-color: black;
-}
-
-input {
-    background-color: #282828; 
-    border: #181818; 
-    color: #b8bb26; 
-    font-family: Consolas,Menlo,"courier new",monospace;
-}
-
-textarea {
-    background-color: #282828; 
-    border: #181818; 
-    color: #fabd2f; 
-    font-family: Consolas,Menlo,"courier new",monospace;
-}
-
 .btn-info:hover {
     }
     .btn-info,
@@ -94,9 +59,9 @@ textarea {
     <div class='container'>
         <div class='row'>
         <div class='col-12 col-sm-12 col-md-10 col-lg-8 col-xl-7 mx-auto'>
-      <div class='shadow-lg p-4 rounded' style='background: #3c3836; border-color: #fb4934;'>
-        <h2>Address J1gger</h2>
-        <p>Just enter your address and select [Generate] to generate your address list.]</p>
+      <div class='shadow-lg p-4 rounded'>
+        <h2>Address J19</h2>
+        <p>Just enter your address and select [Generate] to generate your address list.</p>
         <hr/>
       <div class="card-body">
  
@@ -105,10 +70,10 @@ textarea {
             <div class='col-md-6'>
 
          <div class="result">
-        <div class='d-flex' style='background-color: #504945;'>
+        <div class='d-flex' id='tool-tab'>
             <label>Enter your address:</label>
         </div>
-            <input  class='form-control mb-4 w-100' type="text" placeholder="123 Rainbow Rd." name="address" required class="type-1 no-outline" style='background-color: #282828; border: #181818; color: #b8bb26; font-family: Consolas,Menlo,"courier new",monospace;' id="input"/>
+            <input  class='form-control mb-4 w-100' type="text" placeholder="123 Rainbow Rd." name="address" required class="type-1 no-outline" style='font-family: Consolas,Menlo,"courier new",monospace;' id="email-input"/>
          </div>
          <div class="length range__slider" data-min="4" data-max="32">
 

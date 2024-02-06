@@ -4,14 +4,14 @@ const div = function(text) {
   const elem = document.createElement('div');
   elem.innerHTML = text;
   results.appendChild(elem);
-  elem.style.color = "#fabd2f";
+  elem.style.color = "var(--theme-output-color)";
 }
 
 const processFiles = async function(files) {
   if (files && files.length) {
     results.innerHTML = ''; // remove old results
     for (let file of files) {
-      div(`<strong>${file.name}</strong>`);
+      div(`<strong><u>${file.name}</u></strong>`);
       let exif = null;
       try {
         exif = await ExifReader.load(file);
