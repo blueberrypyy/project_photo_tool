@@ -138,6 +138,7 @@ img {
 
 .d-flex {
     background: var(--theme-bg);
+    color: var(--theme-sub-text);
 }
 
 .shadow, 
