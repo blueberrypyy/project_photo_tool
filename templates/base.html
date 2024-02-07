@@ -20,13 +20,6 @@
 <body>
     {% include 'navbar.html' %}
 
-    
-<div class='ms-auto form-check form-switch'>
-    <p>Night mode</p>
-    <input class="ms-auto form-check-input" onclick="toggleTheme()" type="checkbox" role="switch" id="switch">
-</div>
-
-
 
 {% block content %}
 {% endblock content %}
@@ -37,6 +30,5 @@
 
 
 
-<script src='{% static "js/themefunc.js" %}' type='text/javascript'></script>
 </body>
 

@@ -11,5 +11,5 @@ function toggleTheme() {
 }
 
 (function () {
-    setTheme('theme-brown');
+    setTheme('theme-blue');
 })();

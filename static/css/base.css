@@ -39,39 +39,6 @@
     --theme-switch-color: #8be9fd;
 }
 
-    /* Default theme 
-    --theme-bg: var(--theme-brown-bg);
-    --theme-card: var(--theme-brown-card);
-    --theme-label: var(--theme-brown-label);
-    --theme-input-bg: var(--theme-brown-input-bg);
-    --theme-input-border: var(--theme-brown-input-border);
-    --theme-input-color: var(--theme-brown-input-color);
-    --theme-p: var(--theme-brown-p);
-    --theme-div: var(--theme-brown-div);
-    --theme-text: var(--theme-brown-text);
-    --theme-textarea-bg: var(--theme-brown-textarea-bg);
-    --theme-textarea-border: var(--theme-brown-textarea-border);
-    --theme-textarea-color: var(--theme-brown-textarea-color);
-    --theme-blue-btn: var(--theme-blue-btn);
-}
-
- Switched theme 
-#theme:checked ~ #page {
-    --theme-bg: var(--theme-blue-bg);
-    --theme-card: var(--theme-blue-card);
-    --theme-label: var(--theme-blue-label);
-    --theme-input-bg: var(--theme-blue-input-bg);
-    --theme-input-border: var(--theme-blue-input-border);
-    --theme-input-color: var(--theme-blue-input-color);
-    --theme-p: var(--theme-blue-p);
-    --theme-div: var(--theme-blue-div);
-    --theme-text: var(--theme-blue-text);
-    --theme-textarea-bg: var(--theme-blue-textarea-bg);
-    --theme-textarea-border: var(--theme-blue-textarea-border);
-    --theme-textarea-color: var(--theme-blue-textarea-color);
-    --theme-blue-btn: var(--theme-blue-btn);
-}*/
-
 
 body {
     background-color: var(--theme-bg);
@@ -204,4 +171,38 @@ img {
     border: #181818; 
     color: var(--theme-output-color); 
     font-family: Consolas,Menlo,"courier new",monospace;
+}
+
+
+
+/* Address Edit page styles */
+.form-switch .form-check-input {
+    height: 24px;
+    width: 48px;
+}
+.form-switch .form-check-input:focus {
+    border-color: rgba(0, 0, 0, 0.25);
+    outline: 0;
+    box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+    background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='rgba(0,0,0,0.25)'/></svg>");
+}
+.form-switch .form-check-input:checked {
+    background-color: var(--theme-switch-color);
+    border: none;
+    background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='rgba(255,255,255,1.0)'/></svg>");
+}
+
+#slider::-moz-range-thumb { 
+  -moz-appearance: none;
+  width: 18px;
+  height: 18px;
+  border-radius: 10px;
+  color: black;
+  background-color: var(--theme-switch-color);
+  overflow: visible;
+  cursor: pointer;
+}
+
+.slider .track {
+    -fx-background-color: linear-gradient(to right, red 0%, red 50%, -fx-base 50%, -fx-base 100%);
 }
