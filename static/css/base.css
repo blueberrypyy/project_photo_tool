@@ -15,6 +15,7 @@
     --theme-output-color: #fabd2f;
     --theme-btn: #fe8019;
     --theme-footer-text: #458588;
+    --theme-switch-color: #8ec07c;
 }
 
 .theme-blue {
@@ -35,6 +36,7 @@
     --theme-output-color: #ff79c6;
     --theme-btn: #50fa7b;
     --theme-footer-text: #ffb86c;
+    --theme-switch-color: #8be9fd;
 }
 
     /* Default theme 
@@ -187,17 +189,19 @@ img {
     color: var(--theme-output-color);
 }
 
-#email-input {
+#email-input,
+#input,
+#output {
     background-color: var(--theme-bg); 
     border: #181818; 
     color: var(--theme-input-color); 
     font-family: Consolas,Menlo,"courier new",monospace;
 }
 
-#email-output {
+#email-output,
+#output{
     background-color: var(--theme-bg); 
     border: #181818; 
     color: var(--theme-output-color); 
     font-family: Consolas,Menlo,"courier new",monospace;
-}
 }

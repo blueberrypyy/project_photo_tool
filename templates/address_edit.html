@@ -30,8 +30,7 @@
     background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='rgba(0,0,0,0.25)'/></svg>");
 }
 .form-switch .form-check-input:checked {
-    background-color: #8ec07c;
-    border-color: #8ec07c;
+    background-color: var(--theme-switch-color);
     border: none;
     background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='rgba(255,255,255,1.0)'/></svg>");
 }
@@ -42,7 +41,7 @@
   height: 18px;
   border-radius: 10px;
   color: black;
-  background-color: #458588;
+  background-color: var(--theme-switch-color);
   overflow: visible;
   cursor: pointer;
 }
@@ -73,7 +72,7 @@
         <div class='d-flex' id='tool-tab'>
             <label>Enter your address:</label>
         </div>
-            <input  class='form-control mb-4 w-100' type="text" placeholder="123 Rainbow Rd." name="address" required class="type-1 no-outline" style='background-color: #282828; border: #181818; color: #b8bb26; font-family: Consolas,Menlo,"courier new",monospace;' id="input"/>
+             <input  class='form-control mb-4 w-100' type="text" placeholder="123 Rainbow Rd." name="address" required class="type-1 no-outline" style='font-family: Consolas,Menlo,"courier new",monospace;' id="input"/>
          </div>
          <div class="length range__slider" data-min="4" data-max="32">
 
@@ -120,7 +119,7 @@
             <label>Output:</label>
             <button class='btn btn-sm ms-auto py-0' onclick = "downloadFile()" style='font-size: 0.8rem;'>Save as .txt</button>
         </div>
-         <textarea class="form-control" id="output" rows="16" style='background-color: #282828; border: #181818; color: #fabd2f; font-family: Consolas,Menlo,"courier new",monospace;'> </textarea>
+         <textarea class="form-control" id="output" rows="16" style='font-family: Consolas,Menlo,"courier new",monospace;'> </textarea>
       </div>
       </div>
 
