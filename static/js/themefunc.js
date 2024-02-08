@@ -1,5 +1,6 @@
 function setTheme(themeName) {
     document.documentElement.className = themeName;
+    localStorage.setItem('theme', themeName);
 }
 
 function toggleTheme() {
@@ -11,5 +12,10 @@ function toggleTheme() {
 }
 
 (function () {
+    const storedTheme = localStorage.getItem('theme');
+    if (storedTheme) {
+        setTheme(storedTheme);
+    } else {
     setTheme('theme-blue');
+    }
 })();
