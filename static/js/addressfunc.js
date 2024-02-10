@@ -1,4 +1,4 @@
-function generateAddresses() {
+function generateMain() {
   const sliderProps = {
     fill: "#25d5e4",
     background: "rgba(255, 255, 255, 0.215)",
@@ -9,8 +9,8 @@ function generateAddresses() {
   slider.onchange = e => {
       curLength.setAttribute("data-length", slider.value);
   }
-  generateJig = (value, length = 3, spaces = false, numbers = false) => {
-      let jig = "";
+  generateSub = (value, length = 3, spaces = false, numbers = false) => {
+      let jigged = "";
       const letter = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
       const number = "0123456789";
       
@@ -24,23 +24,23 @@ function generateAddresses() {
       for (let i = 1; i <= length; i++) {
           const randomNumber = Math.floor(Math.random() * 3); 
           if (randomNumber === 0) {
-              jig += genRandLet();
+              jigged += genRandLet();
           } else if (randomNumber === 1) {
               if (!numbers) {
-                  jig += genRandLet();
+                  jigged += genRandLet();
               } else {
-                  jig += genRandNum();
+                  jigged += genRandNum();
               }
           } else if (randomNumber === 2) {
               if (!spaces) {
-                  jig += genRandLet();
+                  jigged += genRandLet();
               } else {
-                  jig += " ";
+                  jigged += " ";
               }
           }
       }
 
-      let newAddress = jig + " " + value;
+      let newAddress = jigged + " " + value;
       return newAddress;
   }
 
@@ -52,12 +52,12 @@ function generateAddresses() {
   let generatedJigs = "";
 
   for (let i = 1; i <= sliderValue; i++) {
-      generatedJigs += "" + generateJig(value, undefined, spaces, numbers) + "\n";
+      generatedJigs += "" + generateSub(value, undefined, spaces, numbers) + "\n";
   }
 
   document.getElementById("output").innerHTML = generatedJigs;
 }
 
 const generateButton = document.getElementById("generate");
-generateButton.onclick = generateAddresses;
+generateButton.onclick = generateMain;
 
