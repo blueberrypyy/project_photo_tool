@@ -1,5 +1,5 @@
 from django.urls import path
-from .views import HomePageView, ExifPageView, DotMethodPageView, AddressEditView, TestingPageView
+from .views import HomePageView, ExifPageView, DotMethodPageView, AddressEditView, AboutPageView
 from django.conf.urls.static import static
 from django.conf import settings
 
@@ -8,5 +8,5 @@ urlpatterns = [
         path('exif/', ExifPageView, name='exif'),
         path('dotmethod/', DotMethodPageView, name='dotmethod'),
         path('address_edit/', AddressEditView, name='address_edit'),
-        path('testing/', TestingPageView.as_view(), name='testing'),
+        path('about/', AboutPageView.as_view(), name='about')
         ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

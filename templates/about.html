@@ -1,0 +1,90 @@
+{% extends 'base.html' %}
+
+{% block content%}
+
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+<div class='container'>
+    <div class='row mt-5'>
+        <div class='col-xxs-1 col-xs-1 col-sm-2 col-md-2 col-lg-2'></div>
+
+        <div class='col-8'>
+                <div class='container'>
+                <h1>About Exif</h2>
+<p>Exiftool is used for pulling the exif data from a .jpg or .png.
+We don't save any photos.</p>
+
+</br>
+</br>
+<h1>Patch Notes</h1>
+
+<p class="d-inline-flex gap-1">
+  <a class="" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+    v 1.03.00 ▼
+  </a>
+<div class="collapse" id="collapseExample">
+    <ul>
+        <li>Added a new page containing patch notes/info about tools</li>
+        <li>Added the version number to the bottom of footer. Click this to view about page</li>
+        <li>Cleaned up ui elements</li>
+        <li>Fixed spelling</li>
+    </ul>
+</div>
+
+<div class='row'>
+
+<p class="d-inline-flex gap-1">
+  <a class="" data-bs-toggle="collapse" href="#v2" role="button" aria-expanded="false" aria-controls="collapseExample">
+    v 1.02.00 ▼
+  </a>
+</p>
+
+
+<div class="collapse" id="v2">
+   <ul>
+        <li>Added a new feature that lets you switch between 2 themes</li>
+        <li>Cleaned up ui elements</li>
+        <li>Fixed spelling</li>
+    </ul> 
+</div>
+                        </div>
+
+
+<div class='row'>
+
+<p class="d-inline-flex gap-1">
+  <a class="" data-bs-toggle="collapse" href="#v1" role="button" aria-expanded="false" aria-controls="collapseExample">
+    v 1.00.00 ▼
+  </a>
+</p>
+
+
+<div class="collapse" id="v1">
+   <ul>
+        <li>Site just went live</li>
+        <li>Exiftool, dotmethod, and address edit all available on day 1</li>
+    </ul> 
+</div>
+                        </div>
+
+        </div>
+
+        <div class='col-xxs-1 col-xs-1 col-sm-2 col-md-2 col-lg-2'></div>
+    </div>
+    </div>
+    </div>
+
+    <div class='d-flex' style='background-color: ; height: 20rem;'></div>
+
+<script>
+    $('#myModal').on('shown.bs.modal', function () {
+  $('#myInput').trigger('focus')
+})
+    </script>
+
+
+{% endblock content %}

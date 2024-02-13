@@ -51,6 +51,7 @@ label {
 a, 
 a:hover {
     color: var(--theme-input-color);
+    text-decoration: none;
 }
 
 li {
