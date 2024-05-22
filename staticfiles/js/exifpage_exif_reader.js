@@ -11,7 +11,7 @@ const div = function(text) {
 
 const processFiles = async function(files) {
   if (files && files.length) {
-    results.innerHTML = ''; // remove old results
+    //results.innerHTML = ''; // remove old results
     output = document.getElementById('email-output').value;
     exifData = [];
     for (let file of files) {
