@@ -16,7 +16,7 @@ const processFiles = async function(files) {
     exifData = [];
     for (let file of files) {
       //div(`<strong><u>${file.name}</u></strong>`);
-      exifData.push(file.name);
+      eifData.push(file.name);
       console.log(exifData);
       let exif = null;
       try {
