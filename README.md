@@ -1,7 +1,7 @@
 <h1>PROJECT_PHOTO_TOOL</h1>
 
 <p>Project_photo_tool is a web application that includes tools written in JavaScript.</p>
-<p>View the application here: <a href='https://exif-photo-tool.onrender.com/' target='_blank' >https://exif-photo-tool.onrender.com</a></p>
+<p>View the application here: <a href='https://exif-photo-tool.onrender.com/' target='_blank'>www.rinsr.tools</a></p>
 </br>
 
 <h2>Exif Photo Tool</h2>
