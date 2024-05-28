@@ -3,7 +3,7 @@ const downloadFile = () => {
          const content = document.querySelector("textarea").value;
          const file = new Blob([content], { type: 'text/plain' });
          link.href = URL.createObjectURL(file);
-         link.download = "dotmethod_emails.txt";
+         link.download = "rinsr-tools-gmails.txt";
          link.click();
          URL.revokeObjectURL(link.href);
       };
