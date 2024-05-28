@@ -58,12 +58,12 @@
 
     <div class='d-flex' id='tool-tab'>
         <label>Output:</label>
-        <button class='btn btn-sm ms-auto py-0' style='font-size: 0.8rem;'onclick = "downloadFile()">Save as .txt</button>
+        <button class='btn btn-sm ms-auto py-0' style='font-size: 0.8rem;' onclick = "downloadFile()">Save as .txt</button>
     </div>
 
 <div class="d-flex p-2 rounded" style='display: inline-flex;'>
 
-    <textarea style='border: #181818; font-family: Consolas,Menlo,"courier new",monospace;' id="email-output" class='form-control' rows="16" wrap="off"></textarea>
+        <textarea style='border: #181818; font-family: Consolas,Menlo,"courier new",monospace;' id="email-output" class='form-control' rows="16" wrap='off'></textarea>
         <!--div id="results" style='font-family: Consolas,Menlo,"courier new",monospace;' class=""></div-->
         </div>
     </div>
@@ -84,6 +84,7 @@
 <script src='{% static "js/exifpage_photo_box.js" %}'></script>
 <script src="{% static 'js/exifpage_photo_upload.js' %}"></script>
 <script src="{% static 'js/exifpage_exif_reader.js' %}"></script>
+<script src='{% static "js/exif_dl_txt.js" %}'></script>
 
 
 {% endblock %}
